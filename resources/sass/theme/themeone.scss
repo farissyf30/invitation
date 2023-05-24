@@ -1,0 +1,103 @@
+.cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .logo {
+        display: inline-block;
+        background-color: #1f1f1f;
+        color: #fff;
+        font-weight: 800;
+        font-size: 40px;
+        padding: 20px 12px 1px 12px;
+    }
+    .cover-body {
+        display: flex;
+        .cover-body-content {
+            position: relative;
+            flex: 0 0 294px;
+            max-width: 294px;
+            .inner {
+                transform: rotate(-90deg);
+                position: fixed;
+                width: 590px;
+                bottom: 378px;
+                height: 234px;
+                left: 5%;
+                right: 0;
+                @media (max-width: 1440px) {
+                    left: -125px;
+                }
+                h1 {
+                    font-weight: 300;
+                    font-size: 120px;
+                    margin-bottom: 0;
+                    line-height: 120px;
+                }
+                .sub-heading {
+                    font-weight: 500;
+                    font-size: 24px;
+                    letter-spacing: 0.3em;
+                    color: #000000;
+                    margin-bottom: 0;
+                }
+                .date {
+                    font-weight: 800;
+                    font-size: 20px;
+                    letter-spacing: 0.1em;
+                    color: #000000;
+                }
+            }
+        }
+    }
+    .cover-footer {
+        background: #000;
+        color: #fff;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        padding: 50px 0;
+        border-radius: 0px 100px 0px 0px;
+        .to {
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 0.3em;
+            margin-bottom: 0;
+        }
+        .guest {
+            font-weight: 800;
+            font-size: 32px;
+            letter-spacing: 0.1em;
+            margin-bottom: 0;
+        }
+        .btn {
+            border: 1px solid #ffffff;
+            border-radius: 0px 20px 0px 0px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 24px;
+            padding: 10px 20px;
+        }
+    }
+    .cover-body-img {
+        position: absolute;
+        right: 0;
+        top: 80px;
+        left: 680px;
+        @media (max-width: 1440px) {
+            left: 19%;
+        }
+    }
+}
+
+.nav {
+    .nav-link {
+        text-transform: uppercase;
+        font-size: 20px;
+        color: #1f1f1f;
+        font-weight: 500;
+    }
+}

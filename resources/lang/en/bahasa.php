@@ -3,5 +3,9 @@
 // resources/lang/en/messages.php
  
 return [
-    'coba' => 'Try',
+    'mempelai' => 'Mempelai',
+    'acara' => 'Acara',
+    'galeri' => 'Galeri',
+    'cerita' => 'Cerita',
+    'rsvp' => 'Rsvp',
 ];

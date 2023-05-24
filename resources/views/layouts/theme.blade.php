@@ -12,14 +12,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300;400;500;800&display=swap" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    @yield('css_theme')
 </head>
 
 <body>
-    <div class="container">
-        @lang('bahasa.coba')
-
-    </div>
+    @yield('content')
 </body>
 
 </html>
