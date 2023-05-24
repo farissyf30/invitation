@@ -3,9 +3,12 @@
 // resources/lang/en/messages.php
  
 return [
-    'mempelai' => 'Mempelai',
-    'acara' => 'Acara',
-    'galeri' => 'Galeri',
-    'cerita' => 'Cerita',
+    'mempelai' => 'Couple',
+    'acara' => 'Event',
+    'galeri' => 'Gallery',
+    'cerita' => 'Story',
     'rsvp' => 'Rsvp',
+    'inivite' => 'WEDDING INVITATION',
+    'to' => 'TO MR / MRS:',
+    'buka' => 'Open Invitation',
 ];

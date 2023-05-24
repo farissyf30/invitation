@@ -14,7 +14,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
-                    <div id="nav-icon2">
+                    <div class="nav-icon">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -58,10 +58,10 @@
     <div class="cover">
         <div class="container-xl">
             <div class="cover-body">
-                <div class="cover-body-content" data-aos="fade-in">
-                    <div class="inner">
+                <div class="cover-body-content">
+                    <div class="inner" data-aos="fade-in">
                         <h1>LEVI & DIO</h1>
-                        <p class="sub-heading">WEDDING INVITATION</p>
+                        <p class="sub-heading">@lang('bahasa.inivite')</p>
                         <p class="date">26 AGUSTUS 2023</p>
                     </div>
                 </div>
@@ -74,19 +74,19 @@
             <div class="container-xl">
                 <div class="row align-items-center gy-3">
                     <div class="col-md-6">
-                        <p class="to">KEPADA BAPAK/IBU/SAUDARA/I:</p>
+                        <p class="to">@lang('bahasa.to')</p>
                         <h4 class="guest">
                             NAMA TAMU
                         </h4>
                     </div>
                     <div class="col-md-6 text-end">
-                        <a href="#" class="btn open">BUKA UNDANGAN</a>
+                        <a href="#" class="btn open">@lang('bahasa.buka')</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="data">
+    <div class="img-heading">
         <img src="{{ asset('images/hero-image.png') }}" class="img-fluid" alt="">
     </div>
     <div class="container mt-5">
@@ -101,8 +101,8 @@
     <script type="module">
         $(document).ready(function(){
             $('body').addClass('opening');
-            $('#nav-icon2').click(function(){
-                $(this).toggleClass('open');
+            $('.navbar-toggler').click(function(){
+                $('.nav-icon').toggleClass('open');
             });
         })
         $('.open').click(function(e){

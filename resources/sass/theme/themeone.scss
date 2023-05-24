@@ -1,4 +1,4 @@
-#nav-icon2 {
+.nav-icon {
     width: 33px;
     height: 21px;
     position: relative;
@@ -13,7 +13,7 @@
     cursor: pointer;
 }
 
-#nav-icon2 span {
+.nav-icon span {
     display: block;
     position: absolute;
     height: 3px;
@@ -30,73 +30,73 @@
     transition: 0.25s ease-in-out;
 }
 
-#nav-icon2 span:nth-child(even) {
+.nav-icon span:nth-child(even) {
     left: 50%;
     border-radius: 0 9px 9px 0;
 }
 
-#nav-icon2 span:nth-child(odd) {
+.nav-icon span:nth-child(odd) {
     left: 0px;
     border-radius: 9px 0 0 9px;
 }
 
-#nav-icon2 span:nth-child(1),
-#nav-icon2 span:nth-child(2) {
+.nav-icon span:nth-child(1),
+.nav-icon span:nth-child(2) {
     top: 0px;
 }
 
-#nav-icon2 span:nth-child(3),
-#nav-icon2 span:nth-child(4) {
+.nav-icon span:nth-child(3),
+.nav-icon span:nth-child(4) {
     top: 8px;
 }
 
-#nav-icon2 span:nth-child(5),
-#nav-icon2 span:nth-child(6) {
-    top: 17px;
+.nav-icon span:nth-child(5),
+.nav-icon span:nth-child(6) {
+    top: 16px;
 }
 
-#nav-icon2.open span:nth-child(1),
-#nav-icon2.open span:nth-child(6) {
+.nav-icon.open span:nth-child(1),
+.nav-icon.open span:nth-child(6) {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 
-#nav-icon2.open span:nth-child(2),
-#nav-icon2.open span:nth-child(5) {
+.nav-icon.open span:nth-child(2),
+.nav-icon.open span:nth-child(5) {
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
 
-#nav-icon2.open span:nth-child(1) {
+.nav-icon.open span:nth-child(1) {
     left: 5px;
     top: 8px;
 }
 
-#nav-icon2.open span:nth-child(2) {
+.nav-icon.open span:nth-child(2) {
     left: calc(50% - 5px);
     top: 8px;
 }
 
-#nav-icon2.open span:nth-child(3) {
+.nav-icon.open span:nth-child(3) {
     left: -50%;
     opacity: 0;
 }
 
-#nav-icon2.open span:nth-child(4) {
+.nav-icon.open span:nth-child(4) {
     left: 100%;
     opacity: 0;
 }
 
-#nav-icon2.open span:nth-child(5) {
+.nav-icon.open span:nth-child(5) {
     left: 5px;
     top: 15px;
 }
 
-#nav-icon2.open span:nth-child(6) {
+.nav-icon.open span:nth-child(6) {
     left: calc(50% - 5px);
     top: 15px;
 }
@@ -126,10 +126,12 @@
     right: 0;
     bottom: 0;
     z-index: 9;
-    background: rgba($color: #fff, $alpha: 1);
-    transition: all 2s ease-in-out;
+    opacity: 1;
+    background: #fff;
+    transition: all 1.3s ease-in-out;
+
     &.open {
-        background: rgba($color: #fff, $alpha: 0);
+        opacity: 0;
     }
     .cover-body {
         display: flex;
@@ -138,13 +140,14 @@
             flex: 0 0 294px;
             max-width: 294px;
             .inner {
-                transform: rotate(-90deg);
+                transform: rotate(-90deg) !important;
                 position: fixed;
                 width: 590px;
                 bottom: 378px;
                 height: 234px;
                 left: 6%;
                 right: 0;
+                z-index: 99;
                 @media (max-width: 1440px) {
                     left: -125px;
                 }
@@ -152,10 +155,10 @@
                     left: -58px;
                 }
                 @media (max-width: 992px) {
-                    transform: none;
+                    transform: rotate(0) !important;
                     top: auto;
                     left: 24px;
-                    z-index: 999;
+
                     bottom: 233px;
                     width: auto;
                     right: 24px;
@@ -198,9 +201,7 @@
         right: 0;
         padding: 50px 0;
         border-radius: 0px 100px 0px 0px;
-        @media (max-width: 992px) {
-            z-index: 999;
-        }
+        z-index: 999;
         @media (max-width: 576px) {
             padding: 30px 0;
         }
@@ -230,6 +231,7 @@
             font-size: 20px;
             line-height: 24px;
             padding: 10px 20px;
+            text-transform: uppercase;
         }
     }
     .cover-body-img {
@@ -237,6 +239,8 @@
         right: 0;
         top: 80px;
         left: 680px;
+        z-index: 9;
+
         @media (max-width: 1440px) {
             left: 19%;
         }
@@ -247,7 +251,6 @@
             top: 0;
             bottom: 0;
             left: 0;
-            z-index: 9;
             img {
                 object-fit: cover;
                 width: 100%;
@@ -284,5 +287,14 @@
         font-size: 20px;
         color: #1f1f1f;
         font-weight: 500;
+    }
+}
+
+.img-heading {
+    height: 100vh;
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
     }
 }
