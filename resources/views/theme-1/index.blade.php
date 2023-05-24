@@ -3,16 +3,28 @@
     <link href="{{ asset('css/theme/themeone.css') }}" rel="stylesheet">
 @endsection
 @section('content')
-    <div class="cover">
-        <div class="container-xl">
-            <div class="row align-items-center">
-                <div class="col-4">
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-xl">
+                <a class="navbar-brand" href="#">
                     <div class="logo">
                         LD
                     </div>
-                </div>
-                <div class="col-8">
-                    <ul class="nav justify-content-end">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <div id="nav-icon2">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 @lang('bahasa.mempelai')
@@ -41,8 +53,12 @@
                     </ul>
                 </div>
             </div>
+        </nav>
+    </header>
+    <div class="cover">
+        <div class="container-xl">
             <div class="cover-body">
-                <div class="cover-body-content">
+                <div class="cover-body-content" data-aos="fade-in">
                     <div class="inner">
                         <h1>LEVI & DIO</h1>
                         <p class="sub-heading">WEDDING INVITATION</p>
@@ -51,12 +67,12 @@
                 </div>
             </div>
         </div>
-        <div class="cover-body-img">
+        <div class="cover-body-img" data-aos="fade-down">
             <img src="{{ asset('images/hero-image.png') }}" class="img-fluid" alt="">
         </div>
-        <div class="cover-footer">
+        <div class="cover-footer" data-aos="fade-up">
             <div class="container-xl">
-                <div class="row align-items-center">
+                <div class="row align-items-center gy-3">
                     <div class="col-md-6">
                         <p class="to">KEPADA BAPAK/IBU/SAUDARA/I:</p>
                         <h4 class="guest">
@@ -64,10 +80,43 @@
                         </h4>
                     </div>
                     <div class="col-md-6 text-end">
-                        <a href="#" class="btn ">BUKA UNDANGAN</a>
+                        <a href="#" class="btn open">BUKA UNDANGAN</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="data">
+        <img src="{{ asset('images/hero-image.png') }}" class="img-fluid" alt="">
+    </div>
+    <div class="container mt-5">
+        <p data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, delectus. Accusamus itaque
+            alias
+            natus! A eaque eum alias excepturi deserunt, deleniti tempore fugiat nisi rem molestias quis recusandae, omnis
+            ea!
+        </p>
+    </div>
+    <div class="data" style="height:1000px"></div>
+
+    <script type="module">
+        $(document).ready(function(){
+            $('body').addClass('opening');
+            $('#nav-icon2').click(function(){
+                $(this).toggleClass('open');
+            });
+        })
+        $('.open').click(function(e){
+            e.preventDefault();
+            var cl = 'aos-animate';
+            $('.cover-body-img').removeClass(cl);
+            $('.cover-body-content').removeClass(cl);
+            $('.cover-footer').removeClass(cl);
+            $('.opening').addClass('scroll');
+            $('.cover').addClass('open');
+
+            setTimeout(() => {
+                $('.cover').remove();
+            }, 1300);
+        })
+    </script>
 @endsection

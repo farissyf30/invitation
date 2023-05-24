@@ -10773,3 +10773,26 @@ body {
   font-size: 15px;
 }
 
+.navbar-toggler {
+  border: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+@media (max-width: 991.98px) {
+  .container, .container-xl {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.opening {
+  overflow: hidden;
+}
+.opening.scroll {
+  overflow: auto;
+}
+

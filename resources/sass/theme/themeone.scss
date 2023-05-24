@@ -1,9 +1,114 @@
-.cover {
+#nav-icon2 {
+    width: 33px;
+    height: 21px;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+#nav-icon2 span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 50%;
+    background: #1f1f1f;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+}
+
+#nav-icon2 span:nth-child(even) {
+    left: 50%;
+    border-radius: 0 9px 9px 0;
+}
+
+#nav-icon2 span:nth-child(odd) {
+    left: 0px;
+    border-radius: 9px 0 0 9px;
+}
+
+#nav-icon2 span:nth-child(1),
+#nav-icon2 span:nth-child(2) {
+    top: 0px;
+}
+
+#nav-icon2 span:nth-child(3),
+#nav-icon2 span:nth-child(4) {
+    top: 8px;
+}
+
+#nav-icon2 span:nth-child(5),
+#nav-icon2 span:nth-child(6) {
+    top: 17px;
+}
+
+#nav-icon2.open span:nth-child(1),
+#nav-icon2.open span:nth-child(6) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#nav-icon2.open span:nth-child(2),
+#nav-icon2.open span:nth-child(5) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+#nav-icon2.open span:nth-child(1) {
+    left: 5px;
+    top: 8px;
+}
+
+#nav-icon2.open span:nth-child(2) {
+    left: calc(50% - 5px);
+    top: 8px;
+}
+
+#nav-icon2.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+}
+
+#nav-icon2.open span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+}
+
+#nav-icon2.open span:nth-child(5) {
+    left: 5px;
+    top: 15px;
+}
+
+#nav-icon2.open span:nth-child(6) {
+    left: calc(50% - 5px);
+    top: 15px;
+}
+
+.header {
     position: fixed;
-    top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    top: 0;
+    z-index: 999;
+    background: transparentize(#fff, 0.8);
+    backdrop-filter: blur(10px);
     .logo {
         display: inline-block;
         background-color: #1f1f1f;
@@ -11,6 +116,20 @@
         font-weight: 800;
         font-size: 40px;
         padding: 20px 12px 1px 12px;
+    }
+}
+
+.cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    background: rgba($color: #fff, $alpha: 1);
+    transition: all 2s ease-in-out;
+    &.open {
+        background: rgba($color: #fff, $alpha: 0);
     }
     .cover-body {
         display: flex;
@@ -24,16 +143,32 @@
                 width: 590px;
                 bottom: 378px;
                 height: 234px;
-                left: 5%;
+                left: 6%;
                 right: 0;
                 @media (max-width: 1440px) {
                     left: -125px;
+                }
+                @media (max-width: 1399px) {
+                    left: -58px;
+                }
+                @media (max-width: 992px) {
+                    transform: none;
+                    top: auto;
+                    left: 24px;
+                    z-index: 999;
+                    bottom: 233px;
+                    width: auto;
+                    right: 24px;
                 }
                 h1 {
                     font-weight: 300;
                     font-size: 120px;
                     margin-bottom: 0;
                     line-height: 120px;
+                    @media (max-width: 576px) {
+                        font-size: 60px;
+                        line-height: auto;
+                    }
                 }
                 .sub-heading {
                     font-weight: 500;
@@ -41,6 +176,9 @@
                     letter-spacing: 0.3em;
                     color: #000000;
                     margin-bottom: 0;
+                    @media (max-width: 576px) {
+                        font-size: 16px;
+                    }
                 }
                 .date {
                     font-weight: 800;
@@ -60,17 +198,29 @@
         right: 0;
         padding: 50px 0;
         border-radius: 0px 100px 0px 0px;
+        @media (max-width: 992px) {
+            z-index: 999;
+        }
+        @media (max-width: 576px) {
+            padding: 30px 0;
+        }
         .to {
             font-weight: 500;
             font-size: 16px;
             letter-spacing: 0.3em;
             margin-bottom: 0;
+            @media (max-width: 576px) {
+                font-size: 13px;
+            }
         }
         .guest {
             font-weight: 800;
             font-size: 32px;
             letter-spacing: 0.1em;
             margin-bottom: 0;
+            @media (max-width: 576px) {
+                font-size: 30px;
+            }
         }
         .btn {
             border: 1px solid #ffffff;
@@ -90,10 +240,45 @@
         @media (max-width: 1440px) {
             left: 19%;
         }
+        @media (max-width: 1399px) {
+            left: 25%;
+        }
+        @media (max-width: 992px) {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 9;
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
 }
 
-.nav {
+.navbar {
+    padding: 0;
+    .navbar-brand {
+        padding: 0;
+    }
+    .nav-item {
+        .nav-link {
+            padding-left: 20px;
+            padding-right: 20px;
+            @media (max-width: 992px) {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        &:last-child {
+            .nav-link {
+                padding-right: 0;
+            }
+        }
+    }
+}
+.navbar-nav {
     .nav-link {
         text-transform: uppercase;
         font-size: 20px;
