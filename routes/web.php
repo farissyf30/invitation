@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('theme-1.index');
 });
+
+Route::get('/{locale}', function ($locale) {
+    App::setLocale($locale);
+    return view('theme-1.index');
+});
